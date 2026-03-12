@@ -40,7 +40,7 @@ def log(tag, msg, color=W):
     print(f"  {DIM}[{ts}]{RESET} {color}{tag:<6}{RESET} {msg}")
 
 def banner():
-    print(f"\n  {C}{BOLD}BRIDGE LAUNCHER{RESET} {DIM}v1.0{RESET}")
+    print(f"\n  {C}{BOLD}DUAL-OPS BRIDGE LAUNCHER{RESET} {DIM}v1.0{RESET}")
     print(f"  {DIM}{'=' * 44}{RESET}\n")
 
 def cleanup(sig=None, frame=None):
