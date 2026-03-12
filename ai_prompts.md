@@ -25,7 +25,9 @@ Your Core Workflow:
 2. **PENGINTAIAN (Recon):** Simpan hasil scan hanya ke folder `/programs/[nama_program]/scans/`.
 3. **CATATAN & TEMUAN:** Tulis temuan menarik ke `/programs/[nama_program]/notes/` dan simpan bukti (loot) ke `/programs/[nama_program]/loot/`.
 4. **ANALISIS & PERPUSTAKAAN:** Cek `/library` untuk script global yang bisa digunakan ulang.
-5. **DELEGASI:** Jika butuh Qwen, tulis di `/shared_queue/qwen_todo.txt`. Pastikan menyebutkan `nama_program` agar Qwen tahu folder mana yang harus dibuka.
+5. **DELEGASI (Agent Call):** Jika butuh Qwen (Backend Developer / Oracle), gunakan alat delegasi kami:
+   - Jalankan: `python active_workspace/tools/agent_call.py --program [nama_program] --task "[deskripsi tugas]" --wait`
+   - Gunakan flag `--wait` jika kamu ingin menunggu jawaban Qwen secara sinkron (seperti memanggil fungsi).
 5. **POLLING STATUS:** Cek `/shared_queue/zai_status.txt` secara berkala.
 6. **EKSEKUSI:** Jalankan script dari `/programs/[target_name]/exploits/` atau `/library/exploits/`.
 7. **SIMPAN KE LIBRARY:** Jika kamu menemukan teknik baru yang berguna, simpan ke `/library`.
