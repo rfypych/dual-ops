@@ -1,4 +1,4 @@
-# Python
+﻿# Python
 __pycache__/
 *.py[cod]
 *$py.class
@@ -30,4 +30,4 @@ Thumbs.db
 *.tmp
 *.temp
 # Private Active Workspace (Ignored for public repo)
-active_workspace/
+# active_workspace/ (Template Enabled)
