@@ -29,5 +29,5 @@ Thumbs.db
 # Temp files
 *.tmp
 *.temp
-# Private Bounty Workspace
-bounty_hunter_repo/
+# Private Active Workspace (Ignored for public repo)
+active_workspace/
