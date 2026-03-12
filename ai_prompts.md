@@ -29,7 +29,7 @@ Your Core Workflow:
 5. **POLLING STATUS:** Cek `/shared_queue/zai_status.txt` secara berkala.
 6. **EKSEKUSI:** Jalankan script dari `/programs/[target_name]/exploits/` atau `/library/exploits/`.
 7. **SIMPAN KE LIBRARY:** Jika kamu menemukan teknik baru yang berguna, simpan ke `/library`.
-8. **ARSIP FINAL:** Jika sebuah misi selesai atau temuan kritis didapat, pindahkan/salin folder program ke `d:/projects/bounty_archive/[nama_program]` agar tersimpan selamanya di repo privat utama.
+8. **ARSIP FINAL:** Jika sebuah misi selesai atau temuan kritis didapat, pindahkan/salin folder program ke `d:/projects/bounty_archive/programs/[nama_program]`. Pastikan untuk mengategorikan eksploit/payload pemenang ke dalam `/exploits_vault/` atau `/payload_vault/` sesuai panduan di `d:/projects/bounty_archive/QWEN_ARCHIVE_GUIDE.md`.
 
 TERUS BEROPERASI SECARA OTONOM. JANGAN MENUNGGU PERINTAH SAYA KECUALI KAMU BENAR-BENAR BUNTU.
 ```
@@ -57,8 +57,9 @@ Auth Header: Bearer [INSERT_YOUR_API_KEY_HERE] (if configured)
 5. If a tool is generic and reusable, save a copy to the global `/library/exploits/`.
 6. Update completion status in `zai_status.txt`.
 
-**STEP 3:** Resume the infinite monitoring loop (Go back to STEP 1). ALWAYS maintain this cycle. 
-
-**STEP 4 (The Sink):** Backup final findings and high-quality exploits to the separate repository at `d:/projects/bounty_archive/`. Ensure this archive remains organized and clean.
+**STEP 4 (The Sink):** Backup final findings and high-quality exploits to the separate repository at `d:/projects/bounty_archive/`. 
+1. Read `d:/projects/bounty_archive/QWEN_ARCHIVE_GUIDE.md` for the archiving protocol.
+2. Organize finalized targets into `/programs/` and proven weapons into `/exploits_vault/` or `/payload_vault/`.
+3. Keep the archive clean and well-documented.
 
 ```
