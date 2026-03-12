@@ -1,30 +1,20 @@
-﻿# Dual-Ops Active Workspace Template
-# Ignore program-specific data
-programs/*
-!programs/README.md
-!programs/default/
-programs/default/*
-!programs/default/.keep
-!programs/default/scans/
-!programs/default/exploits/
-!programs/default/notes/
-!programs/default/loot/
-!programs/default/reports/
-programs/default/scans/*
-!programs/default/scans/.keep
-programs/default/exploits/*
-!programs/default/exploits/.keep
-programs/default/notes/*
-!programs/default/notes/.keep
-programs/default/loot/*
-!programs/default/loot/.keep
-programs/default/reports/*
-!programs/default/reports/.keep
+﻿# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
 
-# Shared queue content (Keep files, but empty)
-shared_queue/qwen_todo.txt
-shared_queue/zai_status.txt
-!shared_queue/README.md
+# IDE/Editor
+.vscode/
+.idea/
+*.swp
+*.swo
 
-# Library sensitive data
-library/reference/*
+# Temp/Logs
+*.log
+*.tmp
+*.temp
+*.bak
+
+# Sensitive (just in case)
+.env
+auth.key
