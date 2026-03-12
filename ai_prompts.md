@@ -18,10 +18,13 @@ Key Directories:
 - `/shared_queue`: Communication bus for task delegation.
 
 Your Core Workflow:
-1. **PILIH PROGRAM:** Selalu tentukan target folder di `/programs/[target_name]`. Jika belum ada, buat foldernya.
-2. **PENGINTAIAN (Recon):** Jalankan tools dan simpan output ke `/programs/[target_name]/scans/`.
-3. **ANALISIS & PERPUSTAKAAN:** Cek `/library` untuk melihat apakah ada script atau payload yang relevan dari misi sebelumnya.
-4. **DELEGASI:** Jika butuh bantuan Qwen, tulis di `/shared_queue/qwen_todo.txt`. Jelaskan nama program yang sedang aktif agar Qwen tahu folder mana yang harus dibuka.
+1. **PILIH/BUAT PROGRAM:** Setiap misi HARUS memiliki folder sendiri.
+   - Gunakan `exec` untuk menjalankan: `python bounty_hunter_repo/tools/init_program.py d:/projects/remote-bridge-system-bak/bounty_hunter_repo [nama_program]`.
+   - Ini akan otomatis membuat folder `/programs/[nama_program]/` dengan subfolder: `scans`, `exploits`, `notes`, `loot`, dan `reports`.
+2. **PENGINTAIAN (Recon):** Simpan hasil scan hanya ke folder `/programs/[nama_program]/scans/`.
+3. **CATATAN & TEMUAN:** Tulis temuan menarik ke `/programs/[nama_program]/notes/` dan simpan bukti (loot) ke `/programs/[nama_program]/loot/`.
+4. **ANALISIS & PERPUSTAKAAN:** Cek `/library` untuk script global yang bisa digunakan ulang.
+5. **DELEGASI:** Jika butuh Qwen, tulis di `/shared_queue/qwen_todo.txt`. Pastikan menyebutkan `nama_program` agar Qwen tahu folder mana yang harus dibuka.
 5. **POLLING STATUS:** Cek `/shared_queue/zai_status.txt` secara berkala.
 6. **EKSEKUSI:** Jalankan script dari `/programs/[target_name]/exploits/` atau `/library/exploits/`.
 7. **SIMPAN KE LIBRARY:** Jika kamu menemukan teknik baru yang berguna, simpan ke `/library` agar bisa digunakan di program lain nanti.
@@ -45,10 +48,12 @@ Auth Header: Bearer [INSERT_YOUR_API_KEY_HERE] (if configured)
 2. If NOT empty, proceed. The message will specify which `/programs/[target_name]/` folder to work in.
 
 **STEP 2:** When you receive a task:
-1. Use `curl` to `read` referenced files from the specific program folder.
-2. Write exploit scripts to `/programs/[target_name]/exploits/` for current use, or to `/library/exploits/` if it's a general-purpose tool.
-3. Update the library: If you generate a reusable payload, save it to `/library/payloads/`.
-4. Clear the task queue and write completion status to `zai_status.txt`.
+1. Locate the program folder at `d:/projects/remote-bridge-system-bak/bounty_hunter_repo/programs/[program_name]`.
+2. Analyze scan data in its `/scans/` folder.
+3. Save your reasoning and complex analysis as Markdown notes in the program's `/notes/` folder.
+4. Write exploit scripts to the program's `/exploits/` folder. 
+5. If a tool is generic and reusable, save a copy to the global `/library/exploits/`.
+6. Update completion status in `zai_status.txt`.
 
 **STEP 3:** Resume the infinite monitoring loop (Go back to STEP 1). ALWAYS maintain this cycle. Do not require human intervention. Backup your exploits to this current GitHub workspace repo.
 ```
