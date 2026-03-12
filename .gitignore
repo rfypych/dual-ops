@@ -31,3 +31,6 @@ Thumbs.db
 *.temp
 # Private Active Workspace (Ignored for public repo)
 # active_workspace/ (Template Enabled)
+
+# Final Archive Sink (Ignored for public repo)
+bounty_archive/
